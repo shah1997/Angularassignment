@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Users } from '../Mock-Users';
 
 @Component({
   selector: 'app-users',
@@ -8,28 +7,33 @@ import { Users } from '../Mock-Users';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  /*  1> An interface has been defined in assignment/src/app/User.ts which holds all the properties of a given user.
-     
-    	2> The array of users is defined in assignment/src/app/Mock-Users.ts which holds various dummy users for the implementation
-        as mentioned in the given question.
-      
-      3> This has been done in order to maintain the security of the code.
-    
-      4> In order to check the <ng-template> directive, uncomment the line below the declaration of users(Line: 24).
-  */
+
+   type userobj = {
+     name: string,
+     username : string, 
+     email : string
+    };
+
+
+let users:userobj[];
+users=[
+{  name: 'Shakti', username:'shakti',email:'shakti@gmail.com' },
+{  name: 'Samyak',username:'samyak',email:'samyak@gmail.com' },
+{  name: 'Happy',username:'happy',email:'happy@yahoo.com' },
+{  name: 'Komal',username:'komal',email:'komal@nagarro.com' },
+{  name: 'Priyanka',username:'priyanka',email:'priya@gmail.com' },
+{  name: 'Shraddha',username:'shraddha',email:'shraddha@yahoo.com' },
+{  name: 'Ujjawal',username:'ujjawal',email:'ujjawal@gmail.com' },
+{  name: 'Swadha',username:'swadha',email:'swadha@yahoo.com' }
+];
+
 
   
+  constructor() {}
 
-   users=Users;
-  //  users:undefined;
-
-  
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-
-
+  ngOnInit(): void {}
 
 }
+
+
+
