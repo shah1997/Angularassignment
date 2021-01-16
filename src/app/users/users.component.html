@@ -1,0 +1,38 @@
+<!-- <h2>My Users</h2>
+<table class="users">
+  <li *ngFor="let user of users">
+    <span class="badge">{{user.username}}</span> {{user.name}}
+  </li>
+</table> -->
+<ng-template [ngIf]="users" [ngIfElse]="Empty">
+<h2>Users</h2>
+<table class="users" width='600' id="sig" cellspacing='0' cellpadding='0' border-spacing='0' border='5' style="margin:0;padding:0;border-color:solid black;">
+    <tr>
+        <td style="background-color: burlywood;" align="center"><strong>User</strong></td>
+        <td style="background-color: burlywood;" align="center"><strong>Username</strong></td>
+        <td style="background-color: burlywood;" align="center"><strong>Email</strong></td>
+
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td >{{user.username}}</td>
+        <td appHighlighter>{{user.email}}</td>
+
+    </tr>
+</table>
+</ng-template>
+<ng-template #Empty>
+    <div>
+        <h3> No users found</h3>
+    </div>
+</ng-template>
+
+<!-- <h2>{{user.name | uppercase}} Details</h2>
+<div><span>username : </span>{{user.username}}</div>
+<div><span>email : </span>{{user.email}}</div>
+
+<div>
+    <label>name:
+      <input [(ngModel)]="user.name" placeholder="name"/>
+    </label>
+  </div> -->
